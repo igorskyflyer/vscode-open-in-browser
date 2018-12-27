@@ -2,7 +2,7 @@
   "name": "open-in-browser",
   "displayName": "Open in Browser",
   "description": "Opens HTML files in a browser of user's choice.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "igordvlpr",
   "license": "SEE LICENSE IN LICENSE.txt",
   "homepage": "https://github.com/igorskyflyer/vscode-open-in-browser/blob/master/README.md",
@@ -74,7 +74,7 @@
     "watch": "tsc -watch -p ./",
     "postinstall": "node ./node_modules/vscode/bin/install",
     "test": "npm run compile && node ./node_modules/vscode/bin/test",
-    "pkgvars": "node ./node_modules/vscode/bin/install"
+    "vscinstall": "node ./node_modules/vscode/bin/install"
   },
   "devDependencies": {
     "@types/node": "^7.0.43",

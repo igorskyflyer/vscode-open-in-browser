@@ -8,7 +8,7 @@
 ## Usage
 
   * open a file,
-  * open the command palette and choose "Open in browser...",
+  * open the command palette and choose "Open in Browser...",
   * or
   * simply press CTRL + SHIFT + F9,
   * choose a browser.
