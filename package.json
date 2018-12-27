@@ -1,0 +1,88 @@
+{
+  "name": "open-in-browser",
+  "displayName": "Open in Browser",
+  "description": "Opens HTML files in a browser of user's choice.",
+  "version": "1.0.0",
+  "publisher": "igordvlpr",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "homepage": "https://github.com/igorskyflyer/vscode-open-in-browser/blob/master/README.md",
+  "author": {
+    "name": "Igor Dimitrijević"
+  },
+  "icon": "assets/icon.png",
+  "engines": {
+    "vscode": "^1.19.0"
+  },
+  "bugs": {
+    "url": "https://github.com/igorskyflyer/vscode-open-in-browser/issues",
+    "email": "igor.dvlpr@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/igorskyflyer/vscode-open-in-browser.git"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "html",
+    "browser",
+    "preview",
+    "code",
+    "tool"
+  ],
+  "activationEvents": [
+    "onCommand:extension.open",
+    "onLanguage:html"
+  ],
+  "main": "./out/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.open",
+        "title": "Open in Browser..."
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.open",
+        "key": "ctrl+shift+f9",
+        "mac": "cmd+alt+b",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Open in Browser",
+      "properties": {
+        "openInBrowser.pickerLayout": {
+          "type": "string",
+          "default": "Full",
+          "title": "Picker Layout",
+          "description": "The layout of the browser selection picker.\n\nFull - display the name and description of each browser\nCompact - display just the name of the browser",
+          "enum": [
+            "Full",
+            "Compact"
+          ]
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test",
+    "pkgvars": "node ./node_modules/vscode/bin/install"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.43",
+    "ts-node": "^7.0.1",
+    "typescript": "^2.6.1",
+    "vscode": "^1.1.26"
+  },
+  "dependencies": {
+    "registry-apppaths": "^1.1.20"
+  }
+}
