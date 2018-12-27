@@ -10,7 +10,7 @@
   * open a file,
   * open the command palette and choose "Open in browser...",
   * or
-  * simply press CTRL + SHIFT + F5,
+  * simply press CTRL + SHIFT + F9,
   * choose a browser.
 
 ## How to run locally
