@@ -313,8 +313,8 @@ export function getOsCommand(browser: Browser, path: string): string {
   return command;
 }
 
-// launches the HTML file in the preferred / default browser
-export function openInBrowser(path: string, browserName: string): void {
+// launches the URL / HTML file in the preferred / default browser
+export function openInBrowser(argument: string, browserName: string): void {
   // 
   Config.refresh();
 
@@ -325,14 +325,14 @@ export function openInBrowser(path: string, browserName: string): void {
   let selectedBrowser: Browser = getBrowserInfo(browserName);
 
   if(selectedBrowser && selectedBrowser.name !== EXT_DEFAULT_BROWSER) {
-    browser = exec(getOsCommand(selectedBrowser, path), (error: Error, stdout: string, stderr: string) => {
+    browser = exec(getOsCommand(selectedBrowser, argument), (error: Error, stdout: string, stderr: string) => {
       // launch the preferred browser
       if(error) {
         // an error has occurred while launching the preferred browser
         window.showErrorMessage(`${selectedBrowser.name} is not installed, the default browser will be used. ${error}`);
 
         // launch the system default browser
-        exec(getDefaultBrowserCommand(path), (error: Error, stdout: string, stderr: string) => {
+        exec(getDefaultBrowserCommand(argument), (error: Error, stdout: string, stderr: string) => {
           if(error) {
             window.showErrorMessage('An error has occurred while launching the default browser.');
           }
@@ -342,7 +342,7 @@ export function openInBrowser(path: string, browserName: string): void {
   }
   else {
     // launch the system default browser
-    browser = exec(getDefaultBrowserCommand(path), (error: Error, stdout: string, stderr: string) => {
+    browser = exec(getDefaultBrowserCommand(argument), (error: Error, stdout: string, stderr: string) => {
       if(error) {
         window.showErrorMessage('An error has occurred while launching the default browser.');
       }

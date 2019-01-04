@@ -2,7 +2,7 @@
   "name": "open-in-browser",
   "displayName": "Open in Browser",
   "description": "Opens HTML files in a browser of user's choice.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publisher": "igordvlpr",
   "license": "SEE LICENSE IN LICENSE.txt",
   "homepage": "https://github.com/igorskyflyer/vscode-open-in-browser/blob/master/README.md",
@@ -32,15 +32,23 @@
     "tool"
   ],
   "activationEvents": [
-    "onCommand:extension.open",
+    "onCommand:extension.openFile",
+    "onCommand:extension.openUrl",
     "onLanguage:html"
   ],
   "main": "./out/extension",
   "contributes": {
     "commands": [
       {
-        "command": "extension.open",
-        "title": "Open in Browser..."
+        "command": "extension.openFile",
+        "category": "Open in Browser",
+        "title": "This file"
+      },
+
+      {
+        "command": "extension.openUrl",
+        "category": "Open in Browser",
+        "title": "URL..."
       }
     ],
     "keybindings": [
