@@ -42,20 +42,26 @@
       {
         "command": "extension.openFile",
         "category": "Open in Browser",
-        "title": "This file"
+        "title": "this file"
       },
 
       {
         "command": "extension.openUrl",
         "category": "Open in Browser",
-        "title": "URL..."
+        "title": "a URL..."
       }
     ],
     "keybindings": [
       {
-        "command": "extension.open",
+        "command": "extension.openFile",
         "key": "ctrl+shift+f9",
         "mac": "cmd+alt+b",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "extension.openUrl",
+        "key": "ctrl+shift+f10",
+        "mac": "cmd+alt+",
         "when": "editorTextFocus"
       }
     ],

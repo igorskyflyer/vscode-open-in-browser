@@ -68,13 +68,11 @@ function launchBrowser(browserName: string): void {
 }
 
 //
-function showBrowserPicker(): string {
+function showBrowserPicker(callback: (value: string | null) => void): void {
   // browser selection picker,
   // can be either string[] (compact layout),
   // or QuickPickItem[] (full layout)
   let picker: any;
-
-  let result: string = '';
 
   // force-refresh the config file to get the latest user preferences
   Config.refresh();
@@ -89,40 +87,55 @@ function showBrowserPicker(): string {
 
   // show the browser selection picker
   window.showQuickPick(picker).then((option) => {
+    let selected: string = '';
     // when the layout is compact, the type of the "option" argument is "string",
     if(typeof option === 'string') {
-      result = option;
+      // if the selected browser is an empty string,
+      // or if the user selected "Cancel", exit
+      selected = option;
     } 
     else {
       // when the layout is full, the type of the "option" argument is "object"
-      result = option['label'];
+      if(option['label']) {
+        selected = option['label'];
+      }
+      else {
+        selected = '';
+      }
     }
 
-    // if the selected browser is an empty string,
-    // or if the user selected "Cancel", exit
-    if(result === 'Cancel') {
-      result = '';
+    if(selected === '' || selected === 'Cancel') {
+      callback(null);
+    }
+    else {
+      callback(selected);
     }
   });
-
-  return result;
 }
 
 // show the UI for browser selection and launch the selected browser
 function openFileCommand(): void {
-  const selected: string = showBrowserPicker();
-
-  // launch the selected browser
-  launchBrowser(selected);
+  showBrowserPicker((selected: string) => {
+    if(selected) {
+      // launch the selected browser
+      launchBrowser(selected);
+    }
+  });
 }
 
+// handles the URL opening in the extension
 function openUrlCommand(): void {
   window.showInputBox({
-    placeHolder: 'Enter URL'
+    value: 'http://',
+    ignoreFocusOut: true,
+    prompt: 'Enter a URL to open in a browser',
+    placeHolder: 'Enter a URL...'
   }).then((value: string) => {
-    const selected = showBrowserPicker();
-
-    browsers.openInBrowser(value, selected);
+    showBrowserPicker((selected: string) => {
+      if(selected) {
+        browsers.openInBrowser(value, selected);
+      }
+    });
   });
 }
 
