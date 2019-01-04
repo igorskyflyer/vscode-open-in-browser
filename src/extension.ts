@@ -123,7 +123,7 @@ function openFileCommand(): void {
   });
 }
 
-// handles the URL opening in the extension
+// handles URL opening in the extension
 function openUrlCommand(): void {
   window.showInputBox({
     value: 'http://',
