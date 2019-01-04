@@ -7,5 +7,4 @@
 * minor bug fixes & optimizations
 
 ## 1.0.0
-
 * released the initial cross platform version
