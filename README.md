@@ -1,9 +1,11 @@
 # Open in Browser
 
-### A cross platform Visual Studio Code extension that opens HTML files in a browser of user's choice, which can be any browser installed on your computer.
+![Installs](https://vsmarketplacebadge.apphb.com/installs/igordvlpr.open-in-browser.svg?style=flat&color=2d97e3)
+![Rating](https://vsmarketplacebadge.apphb.com/rating/igordvlpr.open-in-browser.svg?style=flat&color=2d97e3)
 
-### This is a cross platform version of the extension, developed on Linux and not fully tested on MacOS. If you find any bugs or you have any questions, please report/ask them before leaving a bad review.
-## Thank you. 🙏
+A cross platform Visual Studio Code extension that opens HTML files in a browser of user's choice, which can be any browser installed on your computer.
+This is a cross platform version of the extension, developed on Linux and not fully tested on MacOS. If you find any bugs or you have any questions, please report/ask them before leaving a bad review.
+Thank you. 🙏
 
 ## Usage
 
