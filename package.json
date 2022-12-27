@@ -1,102 +1,101 @@
 {
-  "name": "open-in-browser",
-  "displayName": "Open in Browser",
-  "description": "Opens HTML files in a browser of user's choice.",
-  "version": "1.0.2",
-  "publisher": "igordvlpr",
-  "license": "SEE LICENSE IN LICENSE.txt",
-  "homepage": "https://github.com/igorskyflyer/vscode-open-in-browser/blob/master/README.md",
-  "author": {
-    "name": "Igor Dimitrijević"
-  },
-  "icon": "assets/icon.png",
-  "engines": {
-    "vscode": "^1.19.0"
-  },
-  "bugs": {
-    "url": "https://github.com/igorskyflyer/vscode-open-in-browser/issues",
-    "email": "igor.dvlpr@gmail.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/igorskyflyer/vscode-open-in-browser.git"
-  },
-  "categories": [
-    "Other"
-  ],
-  "keywords": [
-    "html",
-    "browser",
-    "preview",
-    "code",
-    "tool"
-  ],
-  "activationEvents": [
-    "onCommand:extension.openFile",
-    "onCommand:extension.openUrl",
-    "onLanguage:html"
-  ],
-  "main": "./out/extension",
-  "contributes": {
-    "commands": [
-      {
-        "command": "extension.openFile",
-        "category": "Open in Browser",
-        "title": "this file"
-      },
-
-      {
-        "command": "extension.openUrl",
-        "category": "Open in Browser",
-        "title": "a URL..."
-      }
-    ],
-    "keybindings": [
-      {
-        "command": "extension.openFile",
-        "key": "ctrl+shift+f9",
-        "mac": "cmd+alt+b",
-        "when": "editorTextFocus"
-      },
-      {
-        "command": "extension.openUrl",
-        "key": "ctrl+shift+f10",
-        "mac": "cmd+alt+",
-        "when": "editorTextFocus"
-      }
-    ],
-    "configuration": {
-      "type": "object",
-      "title": "Open in Browser",
-      "properties": {
-        "openInBrowser.pickerLayout": {
-          "type": "string",
-          "default": "Full",
-          "title": "Picker Layout",
-          "description": "The layout of the browser selection picker.\n\nFull - display the name and description of each browser\nCompact - display just the name of the browser",
-          "enum": [
-            "Full",
-            "Compact"
-          ]
-        }
-      }
-    }
-  },
-  "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "test": "npm run compile && node ./node_modules/vscode/bin/test",
-    "vscinstall": "node ./node_modules/vscode/bin/install"
-  },
-  "devDependencies": {
-    "@types/node": "^12.11.0",
-    "ts-node": "^8.4.1",
-    "typescript": "^3.6.4",
-    "vscode": "^1.1.36"
-  },
-  "dependencies": {
-    "registry-apppaths": "^1.2.2"
-  }
+	"name": "open-in-browser",
+	"displayName": "Open in Browser",
+	"description": "Opens HTML files in a browser of user's choice.",
+	"version": "1.0.3",
+	"publisher": "igordvlpr",
+	"license": "SEE LICENSE IN LICENSE.txt",
+	"homepage": "https://github.com/igorskyflyer/vscode-open-in-browser/blob/master/README.md",
+	"author": {
+		"name": "Igor Dimitrijević"
+	},
+	"icon": "assets/icon.png",
+	"engines": {
+		"vscode": "^1.74.0"
+	},
+	"bugs": {
+		"url": "https://github.com/igorskyflyer/vscode-open-in-browser/issues",
+		"email": "igor.dvlpr@gmail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/igorskyflyer/vscode-open-in-browser.git"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"html",
+		"browser",
+		"preview",
+		"code",
+		"tool"
+	],
+	"activationEvents": [
+		"onCommand:extension.openFile",
+		"onCommand:extension.openUrl",
+		"onLanguage:html"
+	],
+	"main": "./out/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.openFile",
+				"category": "Open in Browser",
+				"title": "this file"
+			},
+			{
+				"command": "extension.openUrl",
+				"category": "Open in Browser",
+				"title": "a URL..."
+			}
+		],
+		"keybindings": [
+			{
+				"command": "extension.openFile",
+				"key": "ctrl+shift+f9",
+				"mac": "cmd+alt+b",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "extension.openUrl",
+				"key": "ctrl+shift+f10",
+				"mac": "cmd+alt+",
+				"when": "editorTextFocus"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Open in Browser",
+			"properties": {
+				"openInBrowser.pickerLayout": {
+					"type": "string",
+					"default": "Full",
+					"title": "Picker Layout",
+					"description": "The layout of the browser selection picker.\n\nFull - display the name and description of each browser\nCompact - display just the name of the browser",
+					"enum": [
+						"Full",
+						"Compact"
+					]
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test",
+		"vscinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"@types/node": "^16.14.0",
+		"ts-node": "^8.4.1",
+		"typescript": "^4.9.4",
+		"vscode": "^1.1.37"
+	},
+	"dependencies": {
+		"registry-apppaths": "^1.4.2"
+	}
 }
