@@ -96,6 +96,6 @@
 		"vscode": "^1.1.37"
 	},
 	"dependencies": {
-		"registry-apppaths": "^1.2.2"
+		"registry-apppaths": "^1.4.2"
 	}
 }
