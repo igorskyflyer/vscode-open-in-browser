@@ -2,7 +2,7 @@
   "name": "open-in-browser",
   "displayName": "Open in Browser",
   "description": "Opens HTML files in a browser of user's choice.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publisher": "igordvlpr",
   "license": "SEE LICENSE IN LICENSE.txt",
   "homepage": "https://github.com/igorskyflyer/vscode-open-in-browser/blob/master/README.md",
